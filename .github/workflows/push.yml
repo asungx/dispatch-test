@@ -12,6 +12,11 @@ jobs:
 
       - name: Build artifact
         run: docker-compose run --rm dist
+        
+      - name: Tag the code in Git
+        run: |
+          git tag v0.1.0
+          git push origin v0.1.0
 
       - name: Create Release
         uses: ncipollo/release-action@v1.11.2
