@@ -24,4 +24,5 @@ jobs:
           # An optional flag which indicates if artifact read or upload errors should fail the build.
           artifactErrorsFailBuild: true
           # An optional set of paths representing artifacts to upload to the release. This may be a single path or a comma delimited list of paths (or globs)
-          artifacts: ./target/debug/dispatch_test          
+          artifacts: ./target/debug/dispatch_test
+          tag: v0.1.0
