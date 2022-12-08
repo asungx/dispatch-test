@@ -15,8 +15,8 @@ jobs:
         
       - name: Tag the code in Git
         run: |
-          git tag v0.1.0
-          git push origin v0.1.0
+          git tag v0.1.1
+          git push origin v0.1.1
 
       - name: Create Release
         uses: ncipollo/release-action@v1.11.2
@@ -25,4 +25,14 @@ jobs:
           artifactErrorsFailBuild: true
           # An optional set of paths representing artifacts to upload to the release. This may be a single path or a comma delimited list of paths (or globs)
           artifacts: ./target/debug/dispatch_test
-          tag: v0.1.0
+          tag: v0.1.1
+
+      - name: Repository Dispatch
+        # You may pin to the exact commit or the version.
+        # uses: peter-evans/repository-dispatch@26b39ed245ab8f31526069329e112ab2fb224588
+        uses: peter-evans/repository-dispatch@v2.1.1
+        with:
+          # The full name of the repository to send the dispatch.
+          repository: SamuelWilliamsEpistemix/dispatch-test-depender
+          # A custom webhook event name.
+          event-type: Release
