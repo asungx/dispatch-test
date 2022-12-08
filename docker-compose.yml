@@ -1,0 +1,9 @@
+services:
+  dist:
+    image: rust:latest
+    volumes:
+      - type: bind
+        source: .
+        target: /mnt/dispatch_test
+    working_dir: /mnt/dispatch_test
+    command: cargo build
