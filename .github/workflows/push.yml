@@ -16,5 +16,5 @@ jobs:
       - name: Upload to GitHub Releases
         uses: actions/upload-artifact@v2
         with:
-          name: Cargo.toml
-          path: .
+          name: dispatch_test
+          path: ./target/debug
